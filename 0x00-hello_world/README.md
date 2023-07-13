@@ -5,4 +5,6 @@ Scripts for C Programming
 The C file name will be saved in the variable $CFILE
 The output file should be named the same as the C file, but with the extension .s instead of .c.
 Example: if the C file is main.c, the output file should be main.s
+#### 3-name ; Write a script that compiles a C file and creates an executable named cisfun.
+The C file name will be saved in the variable $CFILE
 
