@@ -5,4 +5,5 @@
 #### 3-print_alphabets.c  ; program that prints the alphabet in lowercase, and then in uppercase, followed by a new line.
 ##### 4-print_alphabt.c ; rogram that prints the alphabet in lowercase, followed by a new line.
 ###### 5-print_numbers.c  ; program that prints all single digit numbers of base 10 starting from 0, followed by a new line.
+####### 6-print_numberz.c ; program that prints all single digit numbers of base 10 starting from 0, followed by a new line
 
