@@ -7,6 +7,7 @@ void print_alphabet_x10(void)
 {
 	char letter;
 	int i;
+	
 	for (i = 0; i < 10; i++)
 	{
 		/* Loop through the lowercase alphabet */
@@ -14,6 +15,7 @@ void print_alphabet_x10(void)
 		{
 			_putchar(letter); /* Print each lowercase letter */
 		}
+		
 		_putchar('\n'); /* Move to the next line after printing the alphabet */
 	}
 }
