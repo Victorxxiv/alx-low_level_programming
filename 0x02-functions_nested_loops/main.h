@@ -4,7 +4,8 @@
 /* Function prototype for _putchar */
 int _putchar(char c);
 
-/* Add prototypes for other functions here, if applicable */
+/* Function prototype for print_alphabet */
+void print_alphabet(void);
 
 #endif /* MAIN_H */
 
