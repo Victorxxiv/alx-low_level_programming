@@ -9,6 +9,12 @@
 int print_last_digit(int n)
 {
 	int last_digit;
+	/* Handle special case for INT_MIN */
+	if (n == INT_MIN)
+	{
+		_putchar('8');
+		return (8);
+	}
 	/* Get the absolute value of n to handle negative numbers */
 	if (n < 0)
 		n = -n;
