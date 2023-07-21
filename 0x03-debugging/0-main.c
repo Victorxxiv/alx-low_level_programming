@@ -8,9 +8,10 @@
 int main(void)
 {
 	int i;
-	/*Variables declaration*/
-	i = zero;
+
+	i = 0;
 	positive_or_negative(i);
+	
 	return (0);
 }
 
