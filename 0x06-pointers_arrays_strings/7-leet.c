@@ -8,19 +8,17 @@
  */
 char *leet(char *str)
 {
-	/* Arrays to store characters to be replaced and their replacements */
-	char leetMap[] = {'0', 'L', '\0', 'E', 'A'};
-	char leetNum[] = {'0', '1', '3', '3', '4'};
+	char leetMap[] = "aAeEoOtTlL";
+	char leetNum[] = "4433007711";
 	int i, j;
 
-	 /* Outer loop to iterate through each character in the input string */
+	/* First loop to iterate through the input string */
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		/* Inner loop to check if the current character needs to be replaced */
+		/* Second loop to check if the current character should be replaced */
 		for (j = 0; leetMap[j] != '\0'; j++)
 		{
-			/* Check if the current character matches any character in leetMap */
-			if (str[i] == leetMap[j] || str[i] == leetMap[j] + 32)
+			if (str[i] == leetMap[j])
 			{
 				/* Replace the character with the corresponding leetNum character */
 				str[i] = leetNum[j];
@@ -29,8 +27,6 @@ char *leet(char *str)
 		}
 	}
 
-	 /* Return a pointer to the modified string */
 	return (str);
 }
-
 
