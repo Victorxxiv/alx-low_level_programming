@@ -14,24 +14,17 @@ char *rot13(char *str)
 	/* Loop through the input string */
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		 /* Check if the character is a letter */
+		/* Check if the character is a letter */
 		if ((str[i] >= 'a' && str[i] <= 'z') || (str[i] >= 'A' && str[i] <= 'Z'))
 		{
-			/* Rotate lowercase letters */
-			if (str[i] >= 'a' && str[i] <= 'z')
+			/* Add 13 to the character value to perform ROT13 encoding */
+			if ((str[i] >= 'a' && str[i] <= 'm') || (str[i] >= 'A' && str[i] <= 'M'))
 			{
-				if (str[i] + 13 > 'z')
-					s[i] = 'a' + (str[i] + 13 - 'z' - 1);
-				else
-					s[i] = str[i] + 13;
+				s[i] = str[i] + 13;
 			}
-			/* Rotate uppercase letters */
 			else
 			{
-				if (str[i] + 13 > 'Z')
-					s[i] = 'A' + (str[i] + 13 - 'Z' - 1);
-				else
-					s[i] = str[i] + 13;
+				s[i] = str[i] - 13;
 			}
 		}
 	}
