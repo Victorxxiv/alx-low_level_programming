@@ -11,6 +11,7 @@ int check_palindrome(char *s, int start, int end);
  */
 int is_palindrome(char *s)
 {
+	/* Initialize a variable to store the length of the string */	
 	int len = 0;
 
 	/* Calculate the length of the string */
