@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stddef.h> /* Include this header for NULL */
 
 /**
  * _strchr - Locates a character in a string
@@ -22,6 +23,7 @@ char *_strchr(char *s, char c)
 		return (s);
 	}
 
-	return (NULL);
+	/* No need to check *s == c, as we've already checked it in the loop */
+	return (NULL); /* Use NULL from <stddef.h> */
 }
 
