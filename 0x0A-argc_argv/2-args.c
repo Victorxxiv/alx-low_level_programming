@@ -9,7 +9,8 @@
  */
 int main(int argc, char *argv[])
 {
-	int i; // Declare variables at the beginning of the block */
+	/* Declare variables at the beginning of the block */
+	int i;
 
 	(void)argc; /* Unused parameter to avoid compiler warning */
 
