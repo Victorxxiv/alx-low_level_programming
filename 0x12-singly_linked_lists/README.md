@@ -1,0 +1,4 @@
+C - Singly linked lists
+# Singly Linked List Project
+
+This project involves implementing functions using a singly linked list data structure in C, adhering to specific guidelines and requirements.
