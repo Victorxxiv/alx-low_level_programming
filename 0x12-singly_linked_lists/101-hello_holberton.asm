@@ -1,19 +1,18 @@
 section .data
-	hello db "Hello, Holberton", 10, 0
-	format db "%s", 0
+	hello db "Hello, Holberton", 0   ; Null-terminated string
+	format db "%s", 10, 0            ; Format string for printf
 
 section .text
 	global main
-
-extern printf
+	extern printf
 
 main:
-	push rbp
-	mov rdi, format
-	mov rsi, hello
-	call printf
-	add rsp, 8  ; Clean up the stack
-	xor eax, eax ; Return 0 (success)
-	pop rbp
-	ret
+	push rbp             ; Save base pointer
+	mov rdi, format      ; Load format string into rdi
+	mov rsi, hello       ; Load address of the string into rsi
+	xor rax, rax         ; Clear rax register before syscall
+	call printf         ; Call printf function
+	pop rbp              ; Restore base pointer
 
+	xor rax, rax         ; Return 0
+	ret
