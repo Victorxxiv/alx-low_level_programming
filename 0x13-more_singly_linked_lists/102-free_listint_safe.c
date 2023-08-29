@@ -1,43 +1,39 @@
-#include <stdlib.h>
 #include "lists.h"
+#include <stdlib.h>
 
 /**
- * free_listint_safe - Frees a listint_t linked list safely.
- * @h: Double pointer to the head node of the linked list.
+ * free_listint_safe - Frees a listint_t list safely.
+ * @h: A pointer to the pointer to the head of the list.
  * Return: The size of the list that was freed.
  */
-
 size_t free_listint_safe(listint_t **h)
 {
-	listint_t *current = *h; /* Current node being traversed */
-	size_t count = 0; /* Count of nodes freed */
-	listint_t *next; /* Pointer to store the next node */
+	size_t size = 0;
+	listint_t *current, *temp;
 
-	while (current != NULL)
+	if (!h || !*h)
+		return (0);
+
+	current = *h;
+	while (current)
 	{
-		/* Store the next node before freeing the current node */
-		next = current->next;
+		size++;
+		temp = current;
+		current = current->next;
 
-		/* Free the current node */
-		free(current);
+		/* Break the loop for nodes that are being visited */
+		temp->next = NULL;
+		free(temp);
 
-		/* Move to the next node */
-		current = next;
-
-		/* Increment the count of nodes freed */
-		count++;
-
-		/* If we encounter the first node again, it means there's a loop */
-		if (current == *h)
+		/* If current points back to a previously visited node, stop */
+		if (current == temp)
 		{
-			/* Set the head to NULL and return the count */
-			*h = NULL;
-			return (count);
+			*h = NULL; /* Set head to NULL to indicate it's freed */
+			return (size);
 		}
 	}
 
-	/* Set the head to NULL and return the count */
-	*h = NULL;
-	return (count);
+	*h = NULL; /* Set head to NULL to indicate it's freed */
+	return (size);
 }
 
