@@ -70,16 +70,19 @@ printf("  Entry point address:               0x%lx\n", header->e_entry);
 
 int main(int argc, char *argv[])
 {
+Elf64_Ehdr header;
+const char *filename = argv[1];
+ssize_t bytes_read;
+int fd;
+
 if (argc != 2)
 error_exit("Usage: elf_header elf_filename");
 
-const char *filename = argv[1];
-int fd = open(filename, O_RDONLY);
+fd = open(filename, O_RDONLY);
 if (fd == -1)
 error_exit("Error: Unable to open file");
 
-Elf64_Ehdr header;
-ssize_t bytes_read = read(fd, &header, sizeof(header));
+bytes_read = read(fd, &header, sizeof(header));
 if (bytes_read == -1 || bytes_read != sizeof(header))
 error_exit("Error: Unable to read ELF header");
 
