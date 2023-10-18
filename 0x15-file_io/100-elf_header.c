@@ -174,13 +174,12 @@ printf("  Entry point address:               %#x\n", (unsigned int)e_entry);
 }
 
 /**
- * main - Read an ELF file.
+ * main - Entry point for the ELF file information program.
  *
  * @argc: The number of command-line arguments.
- * @argv: The array of command-line arguments.
- * This function reads an ELF file and prints its header information.
- * Returns 0 on success.
- */
+ * @argv: An array of strings containing the command-line arguments.
+ * Return: 0 on success, or an error code on failure.
+ */ 
 int main(int argc, char *argv[])
 {
 int fd, _read, _close;
