@@ -5,8 +5,7 @@
 #include <unistd.h>
 #include <fcntl.h>
 
-#define REVERSE_ENDIAN(n) ((n << 24) | (((n >> 16) << 24) >> 16) | (((n << 16) >> 24) << 16 | (n >> 24))
-
+#define REVERSE_ENDIAN(n) ((n << 24) | (((n >> 8) & 0xFF) << 16) | (((n >> 16) & 0xFF) << 8) | (n >> 24))
 /**
  * verify - Verify if the file is in ELF format.
  *
