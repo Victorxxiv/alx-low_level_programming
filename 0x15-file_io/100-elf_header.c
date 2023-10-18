@@ -179,7 +179,7 @@ printf("  Entry point address:               %#x\n", (unsigned int)e_entry);
  * @argc: The number of command-line arguments.
  * @argv: An array of strings containing the command-line arguments.
  * Return: 0 on success, or an error code on failure.
- */ 
+ */
 int main(int argc, char *argv[])
 {
 int fd, _read, _close;
