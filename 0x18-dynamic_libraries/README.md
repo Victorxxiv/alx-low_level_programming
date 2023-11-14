@@ -1,1 +1,2 @@
-C - Dynamic libraries
+Dynamic libraries
+offering different functions
