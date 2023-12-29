@@ -16,7 +16,7 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	if (ht == NULL || key == NULL || *key == '\0')
 	{
 		/* If ht is NULL, key is NULL or empty string, return NULL. */
-		return NULL;
+		return (NULL);
 	}
 
 	/* Hash the key */
@@ -30,12 +30,12 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 		if (strcmp(current->key, key) == 0)
 		{
 			/* If a match is found, return the associated value. */
-			return current->value;
+			return (current->value);
 		}
 		current = current->next;
 	}
 
 	/* If the key is not found in the linked list, return NULL. */
-	return NULL;
+	return (NULL);
 }
 
